@@ -56,6 +56,24 @@
         key-positions = <0 46>;
         bindings = <&kp RS(EQUAL)>;
       };
+      // To allow "opposite shift mode" in MonkeyType to work.
+      combo_LHS_shift_b_disable {
+        timeout-ms = <2000>;
+        key-positions = <46 51>;
+        bindings = <&kp B>;
+      };
+      // To allow "opposite shift mode" in MonkeyType to work.
+      combo_RHS_shift_y_disable {
+        timeout-ms = <2000>;
+        key-positions = <22 59>;
+        bindings = <&kp Y>;
+      };
+      // To allow "opposite shift mode" in MonkeyType to work.
+      combo_RHS_shift_carat_disable {
+        timeout-ms = <2000>;
+        key-positions = <8 59>;
+        bindings = <&kp 6>;
+      };
       combo_volume_up {
         timeout-ms = <2000>;
         key-positions = <46 71>;
