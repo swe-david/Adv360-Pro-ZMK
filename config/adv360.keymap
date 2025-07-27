@@ -27,6 +27,26 @@
 //                      68 69 70 \
 
 / {
+    macros {
+        // Macro that releases modifiers before sending volume up
+        vol_up_macro: vol_up_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            // Alternative: K_VOLUME_UP
+            bindings = <&macro_release &kp LSHFT &kp RSHFT>, 
+                       <&macro_tap &kp C_VOLUME_UP>;
+        };
+        
+        // Macro that releases modifiers before sending volume down  
+        vol_down_macro: vol_down_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            // Alternative: K_VOLUME_DOWN
+            bindings = <&macro_release &kp LSHFT &kp RSHFT>,
+                       <&macro_tap &kp C_VOLUME_DOWN>;
+        };
+    };
+    
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -43,15 +63,13 @@
       up_volume: up_volume {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          // Alternative: K_VOLUME_UP
-          bindings = <&kp UP>, <&kp C_VOLUME_UP>;
+          bindings = <&kp UP>, <&vol_up_macro>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
       down_volume: down_volume {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          // Alternative: K_VOLUME_DOWN
-          bindings = <&kp DOWN>, <&kp C_VOLUME_DOWN>;
+          bindings = <&kp DOWN>, <&vol_down_macro>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
