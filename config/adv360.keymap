@@ -23,6 +23,21 @@
 // #define THUMBS_RIGHT 37 38 53 68 69 70
 
 / {
+    behaviors {
+      #include "macros.dtsi"
+      #include "version.dtsi"
+
+      hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick_tap_ms = <175>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+    };
+    
     combos {
       compatible = "zmk,combos";
       combo_volume_up {
@@ -60,23 +75,6 @@
         key-positions = <34 59>;
         // Alternative: C_PLAY_PAUSE
         bindings = <&kp K_PLAY_PAUSE>;
-      };
-    };
-};
-
-/ {
-    behaviors {
-      #include "macros.dtsi"
-      #include "version.dtsi"
-
-      hm: homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&kp>;
       };
     };
 
