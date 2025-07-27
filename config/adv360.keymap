@@ -45,42 +45,42 @@
     combos {
       compatible = "zmk,combos";
       combo_test {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <0 1>;
         bindings = <&kp ESC>;
       };
       combo_volume_up {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <46 71>;
         // Alternative: K_VOLUME_UP
         bindings = <&kp C_VOLUME_UP>;
       };
       combo_volume_down {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <46 72>;
         // Alternative: K_VOLUME_DOWN
         bindings = <&kp C_VOLUME_DOWN>;
       };
       combo_media_next {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <59 64>;
         // Alternative: K_NEXT
         bindings = <&kp C_NEXT>;
       };
       combo_media_prev {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <59 63>;
         // Alternative: K_PREVIOUS
         bindings = <&kp C_PREVIOUS>;
       };
       combo_media_play_pause_1 {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <39 46>;
         // Alternative: K_PLAY_PAUSE
         bindings = <&kp C_PLAY_PAUSE>;
       };
       combo_media_play_pause_2 {
-        timeout-ms = <100>;
+        timeout-ms = <1000>;
         key-positions = <34 59>;
         // Alternative: K_PLAY_PAUSE
         bindings = <&kp C_PLAY_PAUSE>;
