@@ -40,6 +40,20 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      up_volume: up_volume {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          // Alternative: K_VOL_UP
+          bindings = <&kp UP>, <&kp C_VOL_UP>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+      down_volume: down_volume {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          // Alternative: K_VOL_DOWN
+          bindings = <&kp DOWN>, <&kp C_VOL_DOWN>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
     };
     
     combos {
@@ -74,18 +88,6 @@
         key-positions = <8 59>;
         bindings = <&kp 6>;
       };
-      combo_volume_up {
-        timeout-ms = <2000>;
-        key-positions = <46 71>;
-        // Alternative: K_VOLUME_UP
-        bindings = <&kp C_VOLUME_UP>;
-      };
-      combo_volume_down {
-        timeout-ms = <2000>;
-        key-positions = <46 72>;
-        // Alternative: K_VOLUME_DOWN
-        bindings = <&kp C_VOLUME_DOWN>;
-      };
       combo_media_next {
         timeout-ms = <2000>;
         key-positions = <59 64>;
@@ -118,11 +120,11 @@
     default_layer {
       display-name = "Base";
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                               &mo 3     &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                &none     &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &kp LC(B)           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &kp LC(B) &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                                &kp HOME &kp PG_UP                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                    &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE                  &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                               &mo 3     &kp N6 &kp N7        &kp N8           &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                &none     &kp Y  &kp U         &kp I            &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &kp LC(B)           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &kp LC(B) &kp H  &kp J         &kp K            &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                                &kp HOME &kp PG_UP                               &kp N  &kp M         &kp COMMA        &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                    &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE                  &kp up_volume &kp down_volume  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
