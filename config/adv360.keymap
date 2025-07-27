@@ -43,15 +43,15 @@
       up_volume: up_volume {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          // Alternative: K_VOL_UP
-          bindings = <&kp UP>, <&kp C_VOL_UP>;
+          // Alternative: K_VOLUME_UP
+          bindings = <&kp UP>, <&kp C_VOLUME_UP>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
       down_volume: down_volume {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          // Alternative: K_VOL_DOWN
-          bindings = <&kp DOWN>, <&kp C_VOL_DOWN>;
+          // Alternative: K_VOLUME_DOWN
+          bindings = <&kp DOWN>, <&kp C_VOLUME_DOWN>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
