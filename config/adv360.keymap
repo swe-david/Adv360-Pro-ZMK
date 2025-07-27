@@ -44,6 +44,11 @@
     
     combos {
       compatible = "zmk,combos";
+      combo_test {
+        timeout-ms = <100>;
+        key-positions = <0 1>;
+        bindings = <&kp ESC>;
+      };
       combo_volume_up {
         timeout-ms = <100>;
         key-positions = <46 71>;
