@@ -34,7 +34,8 @@
             #binding-cells = <0>;
             // Alternative: K_VOLUME_UP
             bindings = <&macro_release &kp LSHFT &kp RSHFT>, 
-                       <&macro_tap &kp C_VOLUME_UP>;
+                       <&macro_tap &kp C_VOLUME_UP>,
+                       <&macro_press &kp LSHFT &kp RSHFT>;
         };
         
         // Macro that releases modifiers before sending volume down  
@@ -43,7 +44,8 @@
             #binding-cells = <0>;
             // Alternative: K_VOLUME_DOWN
             bindings = <&macro_release &kp LSHFT &kp RSHFT>,
-                       <&macro_tap &kp C_VOLUME_DOWN>;
+                       <&macro_tap &kp C_VOLUME_DOWN>,
+                       <&macro_press &kp LSHFT &kp RSHFT>;
         };
     };
     
