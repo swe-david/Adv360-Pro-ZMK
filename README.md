@@ -1,5 +1,17 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## MY INSTRUCTIONS:
+1. Clone Repo (V3.0) using `git clone git@github.com:swe-david/Adv360-Pro-ZMK.git`
+2. Edit /config/adv360.keymap
+3. `git status && confirm "git add . && git commit -m 'YOUR MESSAGE HERE' && git push origin V3.0"`
+4. Confirm triggering of github action in repo page, await completion
+5. Download "firmware-clique" artifact
+6. Extract zip file
+7. Put LHS board into bootloading mode via "Mod + CIRCLED_1"
+8. Drag SOME_SERIAL_CODE-left.uf2 (from extracted zip) into usb keyboard drive
+9. Put RHS board into bootloading mode via "Mod + CIRCLED_3"
+10. Drag SOME_SERIAL_CODE-right.uf2 (from extracted zip) into usb keyboard drive
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
